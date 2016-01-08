@@ -1,0 +1,30 @@
+{
+  "name": "robopaint-mode-stipple",
+  "version": "0.5.0",
+  "type": "robopaint_mode",
+  "main": "stipple.js",
+  "author": "techninja",
+  "license": "MIT",
+  "robopaint": {
+    "core": false,
+    "debug": true,
+    "i18n": "native",
+    "index": "stipple.html",
+    "name": "stipple",
+    "opensvg": false,
+    "weight": 2,
+    "dependencies": [
+      "paper",
+      "jquery",
+      "underscore",
+      "mediasets"
+    ],
+    "graphics": {
+      "icon": "images/stipple_icon.svg",
+      "previews": []
+    }
+  },
+  "dependencies": {
+    "electron-canvas-to-buffer": "^1.0.2"
+  }
+}

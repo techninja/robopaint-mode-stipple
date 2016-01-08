@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+    <link rel="stylesheet" href="stipple.css">
+    <script>"Placeholder till atom/electron#3164 is resolved"</script>
+  </head>
+<body>
+<progress value="0" max="100"></progress>
+<img id="preview">
+
+<fieldset id="control">
+  <fieldset id="buttons">
+    <legend data-i18n>common.labels.control</legend>
+    <button id="picker" class="normal" data-i18n>modes.stipple.filepick.button</button>
+    <button id="save" class="normal" data-i18n="[title]modes.stipple.buttons.savesvg;modes.stipple.action.savesvg"></button>
+    <button id="save" class="normal" data-i18n="[title]modes.stipple.buttons.save;modes.stipple.action.save"></button>
+    <button id="pause" class="ready" data-i18n>common.action.start</button>
+    <button id="cancel" disabled="disabled" data-i18n="[title]common.action.canceltitle;common.action.cancel"></button>
+    <button id="pen" class="normal" data-i18n>common.action.brush.lower</button>
+    <button id="park" class="normal" data-i18n="[title]common.action.parktitle;common.action.park"></button>
+    <button id="disable" class="normal" data-i18n="[title]common.action.disabletitle;common.action.disable"></button>
+  </fieldset>
+</fieldset>
+
+<fieldset id="render-controls">
+  <legend data-i18n>modes.stipple.labels.title</legend>
+
+  <nav>
+    <div>
+      <label for="stipples" data-i18n>modes.stipple.labels.stipples</label>
+      <input class="managed stipple" type="range" id="stipples" min="50" value="3000" max="20000"/>
+    </div>
+    <div>
+      <label for="color" data-i18n>modes.stipple.labels.color</label>
+      <input class="managed stipple fancy" type="checkbox" id="color"/>
+    </div>
+    <div>
+      <label for="overlap" data-i18n>modes.stipple.labels.overlap</label>
+      <input class="managed stipple fancy" type="checkbox" id="overlap"/>
+    </div>
+    <div>
+      <label for="fixed" data-i18n>modes.stipple.labels.fixed</label>
+      <input class="managed stipple fancy" type="checkbox" id="fixed"/>
+    </div>
+    <div>
+      <label for="threshold" data-i18n>modes.stipple.labels.threshold</label>
+      <input class="managed stipple" type="range" id="threshold" min="0" value="0.1" step="0.001" max="0.8"/>
+    </div>
+    <div>
+      <label for="size" data-i18n>modes.stipple.labels.size</label>
+      <input class="managed stipple" type="range" id="size" min="0" value="1" step="0.1" max="5"/>
+    </div>
+    <div>
+      <label for="subpixels" data-i18n>modes.stipple.labels.subpixels</label>
+      <input class="managed stipple" type="range" id="subpixels" min="0" value="3" step="1" max="8"/>
+    </div>
+    <div>
+      <label for="opacity" data-i18n>modes.stipple.labels.opacity</label>
+      <input class="managed" type="range" id="opacity" min="0" value="20" step="1" max="100"/>
+    </div>
+  </nav>
+</fieldset>
+
+<div id="paper-placeholder"/>
+
+</body>
+</html>

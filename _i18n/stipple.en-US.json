@@ -1,0 +1,42 @@
+{
+  "_meta": {
+    "creator": "techninja",
+    "target": "en-US",
+    "release": "0.9.5"
+  },
+  "info":{
+    "name": "Voronoi Stippler",
+    "use": "Stipple Photos",
+    "detail": "An experimental mode for making stiplled images from photographs."
+  },
+  "buttons": {
+    "savesvg": "Click to save this as the current drawing as an SVG file.",
+    "save": "Click to save this as the current drawing."
+  },
+  "status": {
+    "cancelled": "Stipple printing cancelled.",
+    "generator": "Generating stippled image...",
+    "loading": "Loading completed stipple...",
+    "loaded": "Stipple Image Loaded"
+  },
+  "action": {
+    "savesvg": "Save SVG",
+    "save": "Save transfer"
+  },
+  "filepick": {
+    "button": "Choose Picture",
+    "title": "Select image for stippling",
+    "files": "Common web format images"
+  },
+  "labels": {
+    "title": "Stipple settings",
+    "stipples": "Number of stipples",
+    "color": "Use color?",
+    "overlap": "Allow overlap?",
+    "fixed": "Fixed stipple size?",
+    "threshold": "Convergence threshold",
+    "size": "Size Factor",
+    "subpixels": "Centroid subpixels",
+    "opacity": "Original image opacity"
+  }
+}
