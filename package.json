@@ -1,6 +1,6 @@
 {
   "name": "robopaint-mode-stipple",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "robopaint-type": "mode",
   "main": "stipple.js",
   "author": "techninja",
