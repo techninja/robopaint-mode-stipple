@@ -4,7 +4,7 @@
  * creation of toolpath lines for machine tracing strokes for stipple images.
  * Depends on canvas module, robopaint.
  */
- "use strict";
+"use strict";
 var _ = require('underscore');
 
 // Settings template: pass any of these options in with the first setup argument

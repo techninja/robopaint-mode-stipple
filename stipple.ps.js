@@ -18,6 +18,6 @@ function onFrame(event) {
 paper.resetAll = function() {
   paper.fill.shutdown();
   paper.stippleStroke.shutdown();
-}
+};
 
 canvas.paperInit(paper);

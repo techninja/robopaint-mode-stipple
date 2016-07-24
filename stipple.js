@@ -15,12 +15,11 @@ var fs = require('fs-plus');
 var path = require('path');
 var exec = require('child_process').exec;
 var stippleBusy = false;
-var remote = require('remote');
-var mainWindow = remote.getCurrentWindow();
+var mainWindow = require('electron').remote.getCurrentWindow();
 
 var bin = path.join(mode.path.dir, 'bin', process.platform, 'voronoi_stippler');
-var tmpFile = path.join(app.getDataPath(), 'stipple_temp.svg');
-var tmpImg = path.join(app.getDataPath(), 'stipple_temp.png');
+var tmpFile = path.join(app.getPath('temp'), 'stipple_temp.svg');
+var tmpImg = path.join(app.getPath('temp'), 'stipple_temp.png');
 var raster = null; // Placeholder raster object
 var rasterDPI = 36; // Sets resolution of converted/rendered image
 var printStarted = false;
@@ -115,9 +114,8 @@ function responsiveResize() {
     width: $('#paper-back').width()+2,
     border: 0
   });
-
-
 }
+
 // Callback that tells us that our Paper.js canvas is ready!
 function paperLoadedInit() {
   console.log('Paper ready!');
@@ -155,6 +153,7 @@ function paperLoadImage(path, callback) {
   if (raster) raster.remove();
 
   $('#preview').attr('src', '');
+  responsiveResize();
   paper.canvas.tempLayer.opacity = 1;
   paper.canvas.tempLayer.activate();
   raster = new paper.Raster({
@@ -255,9 +254,7 @@ function getStippleList(svg, scale) {
 mode.bindControls = function() {
   // Bind save functionality
   $('#save').click(function() {
-    robopaint.svg.save(
-      robopaint.svg.wrap(paper.canvas.mainLayer.exportSVG({asString: true}))
-    );
+    robopaint.svg.save(fs.readFileSync(tmpFile).toString());
   });
 
   // Cancel Print
@@ -314,6 +311,7 @@ mode.bindControls = function() {
       // Actually start spooling/printing
       startPrint(function(){
         // TODO: Cleanup and reset for re-run
+        paper.utils.autoPaint(paper.canvas.actionLayer);
       });
 
     } else {
